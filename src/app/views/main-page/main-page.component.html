@@ -1,0 +1,149 @@
+<div class="page">
+  <div class="demo_header">
+    <div class="demo_header_container">
+      <div class="demo_header_title">
+        <img src="../../../assets/demostoreLogo.svg" alt="" class="demo_header-logo">
+      </div>
+      <div class="demo_header_cart" style="cursor: pointer;" (click)="toggleDisplay()">
+        <img src="../../../assets/shopping-bag-new.svg" alt="" class="demo_cart">
+        <div class="cart-number-container">
+          <p class="cart-number">{{cart.length}}</p>
+        </div>
+      </div>
+      <div *ngIf="display" class="cart-items-container fadeIn">
+        <div class="shopping-cart">
+          <div class="title-container">
+            <div class="title montserrat">Shopping bag</div>
+            <div class="" style="display:flex; justify-content:end">
+              <img width="19px" src="../../../assets/arrow-top.svg" (click)="toggleDisplay()" alt="" class="">
+            </div>
+          </div>
+          <hr class="shouldHide">
+          <div *ngIf="cart.length === 0" class="">
+            <div class="empty-cart">
+              <img src="../../../assets/shopping-bag.svg" alt="" class="">
+            </div>
+            <div class="empty-text-container">
+              <p class="montserrat">
+                Your shopping bag is empty
+              </p>
+            </div>
+          </div>
+          <div *ngIf="cart.length > 0">
+            <div *ngFor="let item of cart" class="product-container">
+              <div class="image-container">
+                <img class="product-image" src="{{item.product?.defaultImageUrl}}" alt="Sunglasses">
+              </div>
+              <div class="description-container">
+                <div class="product-title">
+                  <p class="montserrat">{{item.product?.name}}</p>
+                </div>
+                <div class="quantity-container">
+                  <div class="">
+                    <button style="background:none; border: none" (click)="reduce(item)"
+                      [disabled]="item.selectedQuantity === 1">
+                      <img class="minus" src="../../../assets/minus.svg" alt="Minus icon">
+                    </button>
+
+                  </div>
+                  <div class="">
+                    <p style="margin: 0;" class="montserrat">{{item.selectedQuantity}}</p>
+                  </div>
+                  <div class="">
+                    <button style="background:none; border: none" (click)="add(item)">
+                      <img class="plus" src="../../../assets/plus.svg" alt="Plus icon">
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+              <div class="price-container">
+                <div class="product-remove">
+                  <img (click)="remove(item)" src="../../../assets/close.svg" alt="Remove icon">
+                </div>
+                <div class="product-price">
+                  <p class="montserrat">${{item.product?.price}} </p>
+                </div>
+              </div>
+            </div>
+
+            <hr class="shouldHide">
+
+            <div class="subtotal-container shouldHide">
+              <div class="subtotal-label">
+                <p class="montserrat">Subtotal</p>
+              </div>
+              <div class="subtotal-value">
+                <p class="amt_text montserrat">${{subTotal}}</p>
+              </div>
+            </div>
+
+            <div class="shipping-container shouldHide">
+              <div class="shipping-label">
+                <p class="montserrat">Shipping</p>
+              </div>
+              <div class="shipping-value">
+                <p class="amt_text montserrat">${{shippingFee}}</p>
+              </div>
+            </div>
+
+            <hr class="shouldHide">
+            <div class="total-container">
+              <div class="total-label shouldHide">
+                <p class="montserrat">Total</p>
+              </div>
+              <div class="total-value shouldHide">
+                <p class="amt_text montserrat"> ${{total}}</p>
+              </div>
+            </div>
+            <div class="slice-container">
+
+              <div class="checkout-container">
+                <button id="shopping-bag-checkout" class="add-bag-btn montserrat">ADD TO BAG</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+<div class="footer_main">
+
+  <div class="Demo-Store"></div>
+  <div class="payment_strip">
+    <img src="../../../assets/payments/payments.png" alt="" class="payment-img">
+  </div>
+  <footer class="footer_container">
+    <div class="bg">
+      <div class="footer_menu montserrat">
+        <div class="footer-item">
+          <p class="footer-item-header-text">Tr1pp</p>
+          <p class="">Case Studies</p>
+          <p class="">FAQ</p>
+        </div>
+        <div class="footer-item">
+          <p class="footer-item-header-text">Shoppers</p>
+          <p class="">Tr1pp Stores</p>
+          <p class="">Shopping App</p>
+        </div>
+        <div class="footer-item">
+          <p class="footer-item-header-text">Business</p>
+          <p class="">Become a Partner</p>
+          <p class="">Developers</p>
+        </div>
+      </div>
+      <div class="logo-container">
+        <img src="../../../assets/DEMOSTORE/DEMOSTORE.png" alt="" class="demo_footer-logo">
+      </div>
+    </div>
+
+  </footer>
+
+</div>

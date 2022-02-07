@@ -1,0 +1,252 @@
+.demo_header {
+  padding-top: 38px;
+}
+.demo_header_container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.demo_cart {
+  height: 53px;
+  margin-right: 18px;
+}
+.page {
+  margin: 0 auto;
+  max-width: 1440px;
+  background: #fff;
+  padding: 0 52px;
+}
+.cart-number {
+  padding: 0px 13px;
+  margin-top: 8px;
+  font-size: 20px;
+}
+
+.cart-number-container {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  color: #fff;
+  top: 21px;
+  right: 43px;
+  background: #000;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+// .footer_container {
+//   bottom: 0;
+//   display: flex;
+//   flex-flow: wrap;
+//   flex-direction: row;
+//   width: 100%;
+// }
+.Demo-Store {
+  // width: 100%;
+  // height: 3px;
+  // background-color: red;
+  height: 1px;
+  margin: 58px 216.5px 58px 216.5px;
+  background-color: #707070;
+}
+.payment_strip {
+  display: flex;
+  justify-content: center;
+}
+.bg {
+  background: #000;
+}
+
+.footer_menu {
+  width: 516px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 60px;
+  color: #fff;
+}
+
+.cart-items {
+}
+
+.fadeIn {
+  top: 55px;
+  transition: all 0.5s ease;
+  opacity: 1;
+  z-index: 1000;
+  display: block;
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+}
+.empty-text-container {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-items-container {
+  position: absolute;
+  width: 312px;
+  right: 0;
+  z-index: 1000;
+  top: 118px;
+  right: 2%;
+  // left: 73%;
+  background: #fff;
+  box-shadow: 0 2px 24px 0 rgb(0 0 0 / 10%);
+  padding: 38px 30px;
+}
+
+// .shopping-cart {
+//   display: flex;
+//   min-width: 274px;
+//   max-width: 400px;
+//   flex-flow: wrap;
+//   flex-direction: row;
+// }
+.shopping-cart .title-container {
+  display: flex;
+  justify-content: space-between;
+}
+.shopping-cart div {
+  width: 100%;
+}
+
+.shopping-cart .title-container .title {
+  color: #171717;
+  font-size: 16px;
+  font-weight: 700;
+  height: 19px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  flex: 0 0 70%;
+  font-weight: 400;
+}
+.product-container {
+  display: flex;
+  justify-content: space-between;
+}
+.product-image {
+  background: #fff;
+  height: 90px;
+  width: 90px;
+}
+.quantity-container,
+.subtotal-container,
+.shipping-container,
+.total-container {
+  display: flex;
+  justify-content: space-between;
+}
+.minus,
+.plus {
+  width: 18px;
+}
+
+.product-remove {
+  display: flex;
+  justify-content: end;
+}
+.product-price {
+  display: flex;
+  justify-content: end;
+}
+.amt_text {
+  text-align: end;
+}
+.payment_strip {
+  margin-bottom: 56px;
+}
+.add-bag-btn {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  height: 40px;
+  border: none;
+}
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+.footer-item-header-text {
+  font-weight: 600;
+  font-size: 18px;
+}
+@media only screen and (max-width: 600px) {
+  .demo_header {
+    padding-top: 38px;
+  }
+  .page {
+    padding: 0 24px;
+  }
+  .demo_header_container {
+    margin-bottom: 1rem;
+  }
+  .demo_header-logo {
+    width: 66%;
+  }
+  .demo_header_container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .demo_cart {
+    height: 34px;
+  }
+
+  .cart-number {
+    padding: 0px 10px;
+    margin-top: 3px;
+    font-size: 14px;
+  }
+
+  .cart-number-container {
+    height: 25px;
+    width: 25px;
+    top: 27px;
+    right: 25px;
+  }
+
+  .payment-img {
+    width: 100%;
+  }
+  .footer_menu {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 15px;
+    margin-top: 15px;
+    color: #fff;
+  }
+  .footer-item {
+    text-align: center;
+  }
+  .payment_strip {
+    margin-bottom: 10px;
+  }
+
+  .logo-container {
+    padding: 2rem;
+  }
+  .demo_footer-logo {
+    width: 100%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

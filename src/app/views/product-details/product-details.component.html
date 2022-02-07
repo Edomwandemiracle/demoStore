@@ -1,0 +1,64 @@
+<div class="">
+  <div class="grid">
+    <div class="">
+      <div class="">
+        <img src="{{imageUrl}}" alt="{{product.name}}" class="prod_img">
+      </div>
+      <div class="prod-img-grid">
+        <div *ngFor="let img of product.imageUrl" class="">
+          <img (click)="onChangeImg(img)" src="{{img}}" alt="{{product.name}}" class="prod_img">
+        </div>
+        <!-- <div class="">
+          <img src="../../../assets/v_neck/v_neck.png"
+            srcset="../../../assets/v_neck/v_neck@2x.png, ../../../assets/v_neck/v_neck@3x.png" alt="" class="prod_img">
+        </div>
+        <div class="">
+          <img src="../../../assets/v_neck/v_neck.png"
+            srcset="../../../assets/v_neck/v_neck@2x.png, ../../../assets/v_neck/v_neck@3x.png" alt="" class="prod_img">
+        </div> -->
+      </div>
+    </div>
+    <div class="">
+      <div class="">
+        <p class="prod-title montserrat">{{product.name}}</p>
+      </div>
+      <div class="">
+        <p class="prod-price montserrat">£{{product.price}}</p>
+      </div>
+      <div class="">
+        <form class="" [formGroup]="form">
+          <div class="">
+            <p class="title montserrat">Color</p>
+            <select class="input w-100 p-3" formControlName="color" name="industry">
+              <option class="montserrat" value="" disabled selected>
+                Select Color
+              </option>
+              <option class="montserrat" *ngFor="let color of product.colors" [value]="color">
+                {{ color }}
+              </option>
+            </select>
+          </div>
+          <div class="">
+            <p class="title montserrat">Size</p>
+            <select class="input w-100 p-3 montserrat" formControlName="size" name="industry">
+              <option value="" disabled selected>
+                Select Size
+              </option>
+              <option *ngFor="let size of product.sizes" [value]="size">
+                {{ size }}
+              </option>
+            </select>
+          </div>
+          <button class="submitBtn w-100 p-3 mb-4 white-text montserrat" [disabled]="!form.valid"
+            (click)=" toggleLoading()">
+            Add to Bag
+          </button>
+        </form>
+      </div>
+      <div class="">
+        <p class="overview-header montserrat">Overview</p>
+        <p class="overview-text montserrat">{{product.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>

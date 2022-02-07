@@ -1,0 +1,46 @@
+<div class="">
+  <div class="test">
+    <img src="../../../assets/landing_img/landing_img.png"
+      srcset="../../../assets/landing_img/landing_img@2x.png, ../../../assets/landing_img/landing_img@3x.png" alt=""
+      class="landing-img">
+    <div class="product-content"><span class="new-arival-marker">New arrival</span>
+      <div class="title ">Classic Low Bridge Sunglasses</div>
+      <div class="price">$400 </div>
+      <div class="button-container"><button id="btn-explore" class=''>Explore
+          &amp; buy</button></div>
+    </div>
+    <!-- <div class="cent">
+      <div class="row">
+        <div class="">
+          <span class="new-arrival">NEW ARRIVAL</span>
+        </div>
+        <div class="">
+          <p class="Classic-Low-Bridge-Sunglasses">
+            Classic Low Bridge
+            Sunglasses
+          </p>
+        </div>
+        <div class="">
+          <p class="">5000</p>
+        </div>
+
+        <div class="">
+          <p class="">Explore & Buy</p>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+  <div class="img-grid">
+    <div *ngFor="let product of products" class="prod-img-container">
+      <p class="buy-button montserrat" (click)="goToProductDetailPage(product)">BUY</p>
+      <img src="{{product.defaultImageUrl}}" alt="{{product.name}}" class="prod-img">
+      <p class="prod-name-text montserrat">{{product.name}}</p>
+      <p class="prod-price-text montserrat">£{{product.price}}</p>
+    </div>
+    <!-- <div class="">
+      <img src="../../../assets/monks/monks.png"
+        srcset="../../../assets/monks/monks@2x.png, ../../../assets/monks/monks@3x.png" alt="" class="prod_img">
+    </div> -->
+  </div>
+</div>
