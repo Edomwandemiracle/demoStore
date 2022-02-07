@@ -52,13 +52,6 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartLength = this.productService.getCartLength();
-    console.log('====================================');
-    console.log(this.cartLength);
-    console.log('====================================');
-    // localStorage.setItem('TC', '');
-    // this.dataHolderService.dsCart.subscribe((res: any) => {
-    //   this.cart = res;
-    // });
 
     if (localStorage.getItem('TC')) {
       this.cart = JSON.parse(localStorage.getItem('TC') as string);
@@ -72,19 +65,9 @@ export class MainPageComponent implements OnInit {
       //   this.shippingFee += cartItem.shipping;
       //   this.total = this.subTotal + cartItem.shipping;
       // });
-    } else {
-      console.log(this.cart);
-      this.cart.forEach((cartItem) => {
-        cartItem.total = cartItem.selectedQuantity * cartItem.price;
-        this.subTotal += cartItem.total;
-      });
     }
   }
-  // getCart() {
-  //   console.log('====================================');
-  //   console.log(this.cart);
-  //   console.log('====================================');
-  // }
+
   add(item: Cart) {
     this.cart.forEach((cartItem) => {
       if (item.productId === cartItem.productId) {
@@ -142,7 +125,7 @@ export class MainPageComponent implements OnInit {
     this.display = !this.display;
   }
   addToBag() {
-    // localStorage.removeItem('TC');
+    localStorage.removeItem('TC');
     this.toggleDisplay();
   }
 }

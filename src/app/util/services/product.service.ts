@@ -104,7 +104,6 @@ export class ProductService {
           let newCart: Cart[] = [];
           newCart = [...c, cart];
           newCart = [...new Set(newCart)];
-          // console.log(newCart);
           localStorage.setItem('TC', JSON.stringify(newCart));
           this.dataHolderService.sendCart(newCart);
           this.getCartLength();
