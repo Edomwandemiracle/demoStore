@@ -1,0 +1,195 @@
+.landing-img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.img-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+  margin-top: 15px;
+}
+
+.prod-img-container {
+  position: relative;
+}
+
+.prod-img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.buy-button {
+  padding: 20px 16px;
+  font-weight: 800;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  position: absolute;
+  right: 0px;
+  margin: 0;
+  width: 100px;
+  cursor: pointer;
+}
+
+.row {
+  width: auto;
+}
+
+.cent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.test {
+  position: relative;
+}
+
+.product-content {
+  position: absolute;
+  display: block;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.new-arival-marker {
+  margin: 0 auto;
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.75px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid #000;
+  padding: 5px 10px;
+}
+
+.title {
+  color: #000;
+  font-size: 84px;
+  font-weight: 700;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.price {
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+}
+
+.button-container {
+  margin-top: 30px;
+  height: 64px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#btn-explore {
+  background: black;
+  color: white;
+  border: 1px solid black;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  letter-spacing: 2.8px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1.5rem 3rem;
+}
+
+.prod-name-text {
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.prod-price-text {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+@media only screen and (max-width: 600px) {
+  .buy-button {
+    padding: 5px 0px;
+    text-align: center;
+    font-size: 12px;
+    width: 50px;
+  }
+  .product-content {
+    margin-top: 20px;
+  }
+  .new-arival-marker {
+    font-size: 12px;
+  }
+  .title {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  .price {
+    font-size: 16px;
+  }
+  .button-container {
+    margin-top: 10px;
+    height: 64px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #btn-explore {
+    letter-spacing: 0px;
+    padding: 0.5rem 0.5rem;
+    font-size: 12px;
+  }
+  .prod-name-text {
+    font-size: 12px;
+  }
+  .prod-price-text {
+    font-size: 16px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/*# sourceMappingURL=landing-page.component.css.map */
