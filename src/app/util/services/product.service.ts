@@ -22,6 +22,7 @@ export class ProductService {
     product.colors = ['Black', 'Red', 'White'];
     product.price = 40;
     product.quantity = 10;
+    // product.shipping = 0;
     product.defaultImageUrl = '../../../assets/v_neck/v_neck.png';
     product.imageUrl = [
       '../../../assets/v_neck2/v_neck2.png',
@@ -43,6 +44,7 @@ export class ProductService {
     product.colors = ['Black', 'Brown', 'White'];
     product.price = 120;
     product.quantity = 10;
+    // product.shipping = 0;
     product.defaultImageUrl = '../../../assets/monks/monks.png';
     product.imageUrl = [
       '../../../assets/monks/monks.png',
@@ -64,6 +66,7 @@ export class ProductService {
     if (!cartObj) {
       let newCart = [cart];
       localStorage.setItem('TC', JSON.stringify(newCart));
+      this.getCartLength();
     } else {
       let c: Cart[] = JSON.parse(localStorage.getItem('TC') as string);
       c.filter((cartItem) => {
@@ -75,6 +78,7 @@ export class ProductService {
             cartItem.selectedQuantity += 1;
             localStorage.setItem('TC', JSON.stringify(c));
             this.dataHolderService.sendCart(c);
+            this.getCartLength();
           }
         } else {
           let newCart: Cart[] = [];
@@ -83,8 +87,20 @@ export class ProductService {
           // console.log(newCart);
           localStorage.setItem('TC', JSON.stringify(newCart));
           this.dataHolderService.sendCart(newCart);
+          this.getCartLength();
         }
       });
+    }
+  }
+  getCartLength(): any {
+    if (localStorage.getItem('TC')) {
+      let cart: Cart[] = JSON.parse(localStorage.getItem('TC') as string);
+
+      let cartLength: number = cart.reduce(
+        (n, { selectedQuantity }) => n + selectedQuantity,
+        0
+      );
+      return cartLength;
     }
   }
 }

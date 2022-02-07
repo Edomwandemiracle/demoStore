@@ -10,6 +10,7 @@ export class Product {
   category!: string;
   subcategory!: string;
   description!: string;
+  // shipping!: number;
   // createdAt: Date;
   // updatedAt: Date;
 }

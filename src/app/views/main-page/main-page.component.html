@@ -7,7 +7,8 @@
       <div class="demo_header_cart" style="cursor: pointer;" (click)="toggleDisplay()">
         <img src="../../../assets/shopping-bag-new.svg" alt="" class="demo_cart">
         <div class="cart-number-container">
-          <p class="cart-number">{{cart.length}}</p>
+          <p class="cart-number">{{cartLength || 0}}</p>
+
         </div>
       </div>
       <div *ngIf="display" class="cart-items-container fadeIn">
@@ -99,7 +100,8 @@
             <div class="slice-container">
 
               <div class="checkout-container">
-                <button id="shopping-bag-checkout" class="add-bag-btn montserrat">ADD TO BAG</button>
+                <button id="shopping-bag-checkout" class="add-bag-btn montserrat" (click)="addToBag()">ADD TO
+                  BAG</button>
               </div>
             </div>
           </div>

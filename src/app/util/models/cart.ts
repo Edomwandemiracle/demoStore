@@ -10,5 +10,6 @@ export interface Cart {
   productUrl?: string;
   product?: Product;
   total?: number;
-  shipping?: number;
+  // shipping: number;
+  subTotal: number;
 }
