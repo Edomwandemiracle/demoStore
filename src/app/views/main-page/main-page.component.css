@@ -111,8 +111,8 @@
   top: 118px;
   right: 2%;
   background: #fff;
-  -webkit-box-shadow: inset 0 2px 24px 0 black;
-          box-shadow: inset 0 2px 24px 0 black;
+  -webkit-box-shadow: 0 2px 24px 0 black;
+          box-shadow: 0 2px 24px 0 black;
   padding: 38px 30px;
 }
 
