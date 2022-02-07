@@ -11,6 +11,7 @@ import { DataHolderService } from '../../util/services/dataholder.service';
 })
 export class LandingPageComponent implements OnInit {
   products: Product[] = [];
+  bannerProduct!: Product;
   constructor(
     private productService: ProductService,
     private dataHolderService: DataHolderService,
@@ -19,12 +20,20 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProducts();
+    this.getBannerProduct();
   }
   getProducts(): Product[] {
     return (this.products = this.productService.getProduct());
   }
   goToProductDetailPage(product: Product): void {
     this.dataHolderService.sendProduct(product);
+    this.route.navigate(['/product-details']);
+  }
+  getBannerProduct() {
+    this.bannerProduct = this.products[2];
+  }
+  explore() {
+    this.dataHolderService.sendProduct(this.bannerProduct);
     this.route.navigate(['/product-details']);
   }
 }

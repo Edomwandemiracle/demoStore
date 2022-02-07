@@ -55,6 +55,26 @@ export class ProductService {
     product.subcategory = '';
     product.sizes = ['42', '43', '44', '45'];
     products.push(product);
+
+    var product = new Product();
+    product.id = '3';
+    product.name = 'Classic Low Bridge Sunglasses';
+    product.description = `Refresh your style with these laid back sunglasses. An easy-wear oval is cut with a keyhole bridge for vintage character. White frames with black earpieces, this frame comes with a two year warranty.`;
+    product.colors = [];
+    product.price = 150;
+    product.quantity = 10;
+    // product.shipping = 0;
+    product.defaultImageUrl = '../../../assets/landing_img/landing_img.png';
+    product.imageUrl = [
+      '../../../assets/sunglasses1-min.jpg',
+      '../../../assets/sunglasses2-min.jpg',
+      '../../../assets/sunglasses3-min.jpg',
+    ];
+    product.category = '';
+    product.subcategory = '';
+    product.sizes = [];
+    products.push(product);
+
     return products;
   }
 
@@ -100,6 +120,7 @@ export class ProductService {
         (n, { selectedQuantity }) => n + selectedQuantity,
         0
       );
+      this.dataHolderService.sendCartLength(cartLength);
       return cartLength;
     }
   }

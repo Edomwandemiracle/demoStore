@@ -14,6 +14,8 @@ export class DataHolderService {
   dsCart = new BehaviorSubject<Cart[] | null>(null);
   Cart = this.dsCart.asObservable();
 
+  dscartLength = new BehaviorSubject<number | null>(null);
+  cartLength = this.dsCart.asObservable();
   constructor() {}
 
   sendProduct(product: Product): void {
@@ -21,5 +23,8 @@ export class DataHolderService {
   }
   sendCart(cart: Cart[]): void {
     this.dsCart.next(cart);
+  }
+  sendCartLength(length: number): void {
+    this.dscartLength.next(length);
   }
 }

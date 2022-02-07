@@ -27,7 +27,7 @@
       </div>
       <div class="">
         <form class="" [formGroup]="form">
-          <div class="">
+          <div *ngIf="product.colors.length > 0" class="">
             <p class="title montserrat">Color</p>
             <select class="input w-100 p-3" formControlName="color" name="industry">
               <option class="montserrat" value="" disabled selected>
@@ -38,7 +38,7 @@
               </option>
             </select>
           </div>
-          <div class="">
+          <div *ngIf="product.sizes.length > 0" class="">
             <p class="title montserrat">Size</p>
             <select class="input w-100 p-3 montserrat" formControlName="size" name="industry">
               <option value="" disabled selected>
@@ -49,7 +49,8 @@
               </option>
             </select>
           </div>
-          <button class="submitBtn w-100 p-3 mb-4 white-text montserrat" [disabled]="!form.valid" (click)=" addToBag()">
+          <button class="submitBtn w-100 p-3 mb-4 white-text montserrat"
+            [disabled]="!form.valid && product.sizes.length > 0 && product.colors.length > 0" (click)=" addToBag()">
             Add to Bag
           </button>
         </form>

@@ -63,7 +63,7 @@
                   <img (click)="remove(item)" src="../../../assets/close.svg" alt="Remove icon">
                 </div>
                 <div class="product-price">
-                  <p class="montserrat">${{item.product?.price}} </p>
+                  <p class="montserrat">£{{item.product?.price}} </p>
                 </div>
               </div>
             </div>
@@ -75,7 +75,7 @@
                 <p class="montserrat">Subtotal</p>
               </div>
               <div class="subtotal-value">
-                <p class="amt_text montserrat">${{subTotal}}</p>
+                <p class="amt_text montserrat">£{{subTotal}}</p>
               </div>
             </div>
 
@@ -84,7 +84,7 @@
                 <p class="montserrat">Shipping</p>
               </div>
               <div class="shipping-value">
-                <p class="amt_text montserrat">${{shippingFee}}</p>
+                <p class="amt_text montserrat">£{{shippingFee}}</p>
               </div>
             </div>
 
@@ -94,7 +94,7 @@
                 <p class="montserrat">Total</p>
               </div>
               <div class="total-value shouldHide">
-                <p class="amt_text montserrat"> ${{total}}</p>
+                <p class="amt_text montserrat"> £{{total}}</p>
               </div>
             </div>
             <div class="slice-container">

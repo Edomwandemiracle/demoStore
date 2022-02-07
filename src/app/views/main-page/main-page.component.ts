@@ -32,6 +32,20 @@ export class MainPageComponent implements OnInit {
           (n, { selectedQuantity }) => n + selectedQuantity,
           0
         );
+        this.cart.forEach((cartItem) => {
+          cartItem.subTotal = cartItem.selectedQuantity * cartItem.price;
+          localStorage.setItem('TC', JSON.stringify(this.cart));
+          this.subTotal = this.cart.reduce(
+            (n, { subTotal }) => n + subTotal,
+            0
+          );
+          this.total = this.subTotal;
+        });
+      }
+    });
+    this.dataHolderService.dscartLength.subscribe((res: any) => {
+      if (res) {
+        this.cartLength = res;
       }
     });
   }
