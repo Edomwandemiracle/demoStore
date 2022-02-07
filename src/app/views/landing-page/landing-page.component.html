@@ -1,47 +1,25 @@
 <div class="">
   <div class="test">
-    <img src="{{bannerProduct?.defaultImageUrl}}" alt="" class="landing-img">
+    <img src="{{bannerProduct?.defaultImageUrl}}" alt="{{bannerProduct?.name}}" class="landing-img">
     <div class="product-content"><span class="new-arival-marker">New arrival</span>
       <div class="title ">{{bannerProduct?.name}}</div>
       <div class="price">£{{bannerProduct?.price}}</div>
       <div class="button-container"><button id="btn-explore" (click)="explore()" class=''>Explore
           &amp; buy</button></div>
     </div>
-    <!-- <div class="cent">
-      <div class="row">
-        <div class="">
-          <span class="new-arrival">NEW ARRIVAL</span>
-        </div>
-        <div class="">
-          <p class="Classic-Low-Bridge-Sunglasses">
-            Classic Low Bridge
-            Sunglasses
-          </p>
-        </div>
-        <div class="">
-          <p class="">5000</p>
-        </div>
 
-        <div class="">
-          <p class="">Explore & Buy</p>
-        </div>
-      </div>
-    </div> -->
 
   </div>
   <div class="img-grid">
     <div *ngFor="let product of products; let i = index" class="prod-img-container">
       <div *ngIf="i < 2" class="">
         <p class="buy-button montserrat" (click)="goToProductDetailPage(product)">BUY</p>
-        <img src="{{product.defaultImageUrl}}" alt="{{product.name}}" class="prod-img">
-        <p class="prod-name-text montserrat">{{product.name}}</p>
-        <p class="prod-price-text montserrat">£{{product.price}}</p>
+        <img src="{{product?.defaultImageUrl}}" alt="{{product?.name}}" class="prod-img">
+        <p class="prod-name-text montserrat">{{product?.name}}</p>
+        <p class="prod-price-text montserrat">£{{product?.price}}</p>
       </div>
 
     </div>
-    <!-- <div class="">
-      <img src="../../../assets/monks/monks.png"
-        srcset="../../../assets/monks/monks@2x.png, ../../../assets/monks/monks@3x.png" alt="" class="prod_img">
-    </div> -->
+
   </div>
 </div>

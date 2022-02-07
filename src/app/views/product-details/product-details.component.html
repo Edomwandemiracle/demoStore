@@ -2,11 +2,11 @@
   <div class="grid">
     <div class="">
       <div class="">
-        <img src="{{imageUrl}}" alt="{{product.name}}" class="prod_img">
+        <img src="{{imageUrl}}" alt="{{product?.name}}" class="prod_img">
       </div>
       <div class="prod-img-grid">
-        <div *ngFor="let img of product.imageUrl" class="">
-          <img (click)="onChangeImg(img)" src="{{img}}" alt="{{product.name}}" class="prod_img">
+        <div *ngFor="let img of product?.imageUrl" class="">
+          <img (click)="onChangeImg(img)" src="{{img}}" alt="{{product?.name}}" class="prod_img">
         </div>
         <!-- <div class="">
           <img src="../../../assets/v_neck/v_neck.png"
@@ -20,10 +20,10 @@
     </div>
     <div class="">
       <div class="">
-        <p class="prod-title montserrat">{{product.name}}</p>
+        <p class="prod-title montserrat">{{product?.name}}</p>
       </div>
       <div class="">
-        <p class="prod-price montserrat">£{{product.price}}</p>
+        <p class="prod-price montserrat">£{{product?.price}}</p>
       </div>
       <div class="">
         <form class="" [formGroup]="form">
@@ -57,7 +57,7 @@
       </div>
       <div class="">
         <p class="overview-header montserrat">Overview</p>
-        <p class="overview-text montserrat">{{product.description}}</p>
+        <p class="overview-text montserrat">{{product?.description}}</p>
       </div>
     </div>
   </div>
