@@ -7,8 +7,6 @@ import { DataHolderService } from './dataholder.service';
   providedIn: 'root',
 })
 export class ProductService {
-  // products: Product[];
-
   constructor(private dataHolderService: DataHolderService) {}
   getProduct(): Product[] {
     const products = new Array<Product>();
@@ -25,9 +23,9 @@ export class ProductService {
     // product.shipping = 0;
     product.defaultImageUrl = '../../../assets/v_neck/v_neck.png';
     product.imageUrl = [
-      '../../../assets/v_neck2/v_neck2.png',
-      '../../../assets/v_neck3/v_neck3.png',
-      '../../../assets/v_neck4/v_neck4.png',
+      '../../../assets/v_neck2/v_neck2@3x.png',
+      '../../../assets/v_neck3/v_neck3@3x.png',
+      '../../../assets/v_neck4/v_neck4@3x.png',
     ];
     product.category = `Men's fashion`;
     product.subcategory = 'Shirt';
@@ -47,9 +45,9 @@ export class ProductService {
     // product.shipping = 0;
     product.defaultImageUrl = '../../../assets/monks/monks.png';
     product.imageUrl = [
-      '../../../assets/monks/monks.png',
-      '../../../assets/monks/monks.png',
-      '../../../assets/monks/monks.png',
+      '../../../assets/monks/monks@3x.png',
+      '../../../assets/monks/monks@3x.png',
+      '../../../assets/monks/monks@3x.png',
     ];
     product.category = '';
     product.subcategory = '';
@@ -98,6 +96,7 @@ export class ProductService {
             cartItem.selectedQuantity += 1;
             localStorage.setItem('TC', JSON.stringify(c));
             this.dataHolderService.sendCart(c);
+            this.dataHolderService.sendOpenCart(true);
             this.getCartLength();
           }
         } else {
@@ -106,6 +105,7 @@ export class ProductService {
           newCart = [...new Set(newCart)];
           localStorage.setItem('TC', JSON.stringify(newCart));
           this.dataHolderService.sendCart(newCart);
+          this.dataHolderService.sendOpenCart(true);
           this.getCartLength();
         }
       });

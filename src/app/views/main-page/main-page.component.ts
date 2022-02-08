@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { DatePipe, Location } from '@angular/common';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+
 import { Cart } from '../../util/models/cart';
 import { DataHolderService } from '../../util/services/dataholder.service';
 import { ProductService } from 'src/app/util/services/product.service';
@@ -19,12 +18,9 @@ export class MainPageComponent implements OnInit {
   display: boolean = false;
   cartLength: number = 0;
   constructor(
-    private _location: Location,
-    private route: Router,
     private dataHolderService: DataHolderService,
     private productService: ProductService
   ) {
-    // localStorage.setItem('TC', '');
     this.dataHolderService.dsCart.subscribe((res: any) => {
       if (res) {
         this.cart = res;
@@ -48,6 +44,11 @@ export class MainPageComponent implements OnInit {
         this.cartLength = res;
       }
     });
+    this.dataHolderService.dscartState.subscribe((res: any) => {
+      if (res) {
+        this.display = res;
+      }
+    });
   }
 
   ngOnInit(): void {
@@ -57,14 +58,6 @@ export class MainPageComponent implements OnInit {
       this.cart = JSON.parse(localStorage.getItem('TC') as string);
       this.subTotal = this.cart.reduce((n, { subTotal }) => n + subTotal, 0);
       this.total = this.subTotal;
-
-      // this.cart.forEach((cartItem) => {
-      //   cartItem.total = cartItem.selectedQuantity * cartItem.price;
-      //   this.subTotal += cartItem.total;
-      //   cartItem.shipping = 0;
-      //   this.shippingFee += cartItem.shipping;
-      //   this.total = this.subTotal + cartItem.shipping;
-      // });
     }
   }
 

@@ -2,7 +2,7 @@
   <div class="demo_header">
     <div class="demo_header_container">
       <div class="demo_header_title">
-        <img src="../../../assets/demostoreLogo.svg" alt="" class="demo_header-logo">
+        <img src="../../../assets/demostoreLogo.svg" alt="" [routerLink]="['/']" class="demo_header-logo">
       </div>
       <div class="demo_header_cart" style="cursor: pointer;" (click)="toggleDisplay()">
         <img src="../../../assets/shopping-bag-new.svg" alt="" class="demo_cart">
@@ -37,7 +37,7 @@
               </div>
               <div class="description-container">
                 <div class="product-title">
-                  <p class="montserrat">{{item.product?.name}}</p>
+                  <p class="montserrat" style="font-size:14px; margin-top: 0;">{{item.product?.name}}</p>
                 </div>
                 <div class="quantity-container">
                   <div class="">
@@ -48,7 +48,7 @@
 
                   </div>
                   <div class="">
-                    <p style="margin: 0;" class="montserrat">{{item?.selectedQuantity}}</p>
+                    <p style="margin: 0; text-align: center;" class="montserrat">{{item?.selectedQuantity}}</p>
                   </div>
                   <div class="">
                     <button style="background:none; border: none" (click)="add(item)">
@@ -60,9 +60,9 @@
               </div>
               <div class="price-container">
                 <div class="product-remove">
-                  <img (click)="remove(item)" src="../../../assets/close.svg" alt="Remove icon">
+                  <img (click)="remove(item)" width="14px" src="../../../assets/close.svg" alt="Remove icon">
                 </div>
-                <div class="product-price">
+                <div class="product-price" style="margin-top: 1rem;">
                   <p class="montserrat">£{{item.product?.price}} </p>
                 </div>
               </div>
