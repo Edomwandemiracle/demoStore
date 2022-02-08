@@ -1,7 +1,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 15px;
+  grid-gap: 40px;
   margin-top: 15px;
 }
 .prod-img-grid {
@@ -16,7 +16,7 @@
 .prod-title {
   font-size: 36px;
   font-weight: 500;
-  margin-top: 1rem;
+  margin-top: 0rem;
   margin-bottom: 0.5rem;
 }
 .title {
@@ -42,6 +42,8 @@
   color: #fff;
   text-transform: uppercase;
   font-weight: 800;
+  border: none;
+  cursor: pointer;
 }
 .overview-header {
   font-size: 24px;
