@@ -130,11 +130,12 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   flex: 0 0 70%;
-  font-weight: 400;
+  font-weight: 700;
 }
 .product-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 .product-image {
   background: #fff;
